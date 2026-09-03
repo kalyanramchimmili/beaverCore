@@ -1,9 +1,7 @@
 name: publish
 
 on:
-  push:
-    tags:
-      - 'v*'
+  workflow_dispatch:
 
 jobs:
   build-and-publish:
@@ -17,14 +15,9 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Verify tag matches pyproject version
+      - name: Show version being published
         run: |
-          tag="${GITHUB_REF_NAME#v}"
-          pyproject_version=$(python -c "import tomllib; print(tomllib.load(open('pyproject.toml','rb'))['project']['version'])")
-          if [ "$pyproject_version" != "$tag" ]; then
-            echo "tag v$tag != pyproject $pyproject_version" >&2
-            exit 1
-          fi
+          python -c "import tomllib; print('publishing beavercore', tomllib.load(open('pyproject.toml','rb'))['project']['version'])"
 
       - name: Build
         run: |

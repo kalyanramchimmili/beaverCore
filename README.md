@@ -186,7 +186,7 @@ beaverCore/
 │   └── test_client.py
 ├── example.py           # runnable GitHub API demo
 └── .github/workflows/
-    └── publish.yml      # tag v<version> → PyPI (trusted publisher)
+    └── publish.yml      # manual: Actions tab → Run workflow → PyPI
 ```
 
 ## Development
@@ -199,12 +199,7 @@ ruff check .
 
 ## Publishing
 
-Published to PyPI via GitHub Actions using [trusted publishing](https://docs.pypi.org/trusted-publishers/). A tag matching `v<version>` triggers a release.
-
-```bash
-git tag v0.1.0
-git push origin v0.1.0
-```
+Published to PyPI via GitHub Actions using [trusted publishing](https://docs.pypi.org/trusted-publishers/). Releases are **manual** — trigger the `publish` workflow from the Actions tab (click **Run workflow**). It publishes whatever version is set in `pyproject.toml` at that commit.
 
 ## Sibling projects
 
