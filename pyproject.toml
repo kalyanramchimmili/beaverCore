@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "beavercore"
-version = "0.1.0"
+version = "0.1.1"
 description = "An opinionated HTTP client framework on top of requests — retries, backoff, 429 handling, session refresh, typed exceptions, observability hooks."
 readme = "README.md"
 license = { file = "LICENSE" }
