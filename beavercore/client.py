@@ -21,8 +21,6 @@ ObserverHook = Callable[[dict], None]
 class Client:
     """HTTP client with retry, backoff, 429 handling, one-shot auth refresh.
 
-    All extension points are callables passed at construction — no subclassing.
-
     :param auth: mutates ``request_kwargs`` before each attempt to attach credentials.
     :param refresh: called once on the first 401; return ``True`` to retry, ``False``
         (or omit) to raise :class:`AuthError`.

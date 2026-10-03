@@ -36,6 +36,7 @@ dev = [
 
 [project.urls]
 Homepage = "https://github.com/kalyanramchimmili/beaverCore"
+Documentation = "https://kalyanramchimmili.github.io/documentation/beaverCore/introduction"
 Repository = "https://github.com/kalyanramchimmili/beaverCore"
 Issues = "https://github.com/kalyanramchimmili/beaverCore/issues"
 
